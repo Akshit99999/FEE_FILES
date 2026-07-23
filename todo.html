@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Todo App</title>
+</head>
+<body>
+
+<div id="todo"></div>
+
+<script>
+(function () {
+
+    const todos = JSON.parse(localStorage.getItem("todos")) || [];
+
+    const todocontainer = document.getElementById("todo");
+
+    const inputtask = document.createElement("input");
+    inputtask.type = "text";
+    inputtask.placeholder = "Enter task...";
+
+    const addbtn = document.createElement("button");
+    addbtn.textContent = "Add";
+
+    const todolist = document.createElement("div");
+    todolist.style.border = "2px solid black";
+    todolist.style.padding = "10px";
+    todolist.style.marginTop = "10px";
+
+    todocontainer.append(inputtask, addbtn, todolist);
+
+    function saveTodos() {
+        localStorage.setItem("todos", JSON.stringify(todos));
+        alert("Todos Saved!");
+    }
+
+    function renderTodos() {
+        todolist.innerHTML = "";
+
+        todos.forEach((task, index) => {
+
+            const row = document.createElement("div");
+            row.style.border = "1px solid gray";
+            row.style.padding = "10px";
+            row.style.margin = "10px 0";
+
+            // Top Row (Task + Save)
+            const topRow = document.createElement("div");
+            topRow.style.display = "flex";
+            topRow.style.justifyContent = "space-between";
+            topRow.style.alignItems = "center";
+
+            const p = document.createElement("span");
+            p.textContent = task;
+
+            const saveTaskBtn = document.createElement("button");
+            saveTaskBtn.textContent = "Save";
+
+            saveTaskBtn.addEventListener("click", function () {
+                saveTodos();
+            });
+
+            topRow.append(p, saveTaskBtn);
+
+            // Bottom Row (Edit + Delete)
+            const bottomRow = document.createElement("div");
+            bottomRow.style.marginTop = "8px";
+
+            const editBtn = document.createElement("button");
+            editBtn.textContent = "Edit";
+
+            const deleteBtn = document.createElement("button");
+            deleteBtn.textContent = "Delete";
+
+            editBtn.style.marginRight = "8px";
+
+            editBtn.addEventListener("click", function () {
+                const newTask = prompt("Edit Task:", todos[index]);
+
+                if (newTask && newTask.trim() !== "") {
+                    todos[index] = newTask.trim();
+                    renderTodos();
+                }
+            });
+
+            deleteBtn.addEventListener("click", function () {
+                todos.splice(index, 1);
+                renderTodos();
+            });
+
+            bottomRow.append(editBtn, deleteBtn);
+
+            row.append(topRow, bottomRow);
+            todolist.append(row);
+        });
+    }
+
+    function addTodo() {
+
+        const task = inputtask.value.trim();
+
+        if (!task) return;
+
+        todos.unshift(task);
+
+        renderTodos();
+
+        inputtask.value = "";
+        inputtask.focus();
+    }
+
+    addbtn.addEventListener("click", addTodo);
+
+    renderTodos();
+
+})();
+</script>
+
+</body>
+</html>

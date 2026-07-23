@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Basic HTML Structure</title>
+   <!-- create a advanced internal css for this webpage -->
+   <style>
+       body {
+           font-family: Arial, sans-serif;
+           line-height: 1.6;
+           margin: 0;
+           padding: 0;
+       }
+       h1 {
+           background: #007BFF;
+           color: white;
+           padding: 10px 0;
+           text-align: center;
+       }
+       p {
+           padding: 15px;
+           margin: 0;
+       }
+       kbd {
+           background: #f2f2f2;
+           padding: 2px 4px;
+           border-radius: 3px;
+       }
+   </style>
+</head>
+<body>
+
+    <h1>Welcome to My Website</h1>
+    <p>This is a basic<kbd> HTML</kbd> structure.</p>
+    <abbr title="I DONT KNOW"> idk </abbr>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellendus, iure similique voluptate esse at magni iusto ipsam dolore quos natus, quasi eum et voluptas atque enim corporis, cumque autem tempora sequi consectetur omnis? Qui distinctio porro deserunt voluptatum necessitatibus ea officia iure totam, reiciendis nostrum commodi iste, quo error atque est ipsum quas perferendis. Aut corporis, deleniti velit deserunt alias quae delectus facere dignissimos dicta laboriosam non minus nemo vero necessitatibus ipsa tempora neque excepturi architecto, soluta ea consequatur. Aspernatur aliquid reprehenderit itaque officia sint placeat necessitatibus, quam aliquam quasi maiores mollitia consectetur? Minima nobis quae obcaecati voluptates minus maiores?</p>
+    <iframe src="https://www.wikipedia.com" title="Example Iframe" width="600" height="400"></iframe>
+    <br>
+
+    <progress value="50" max="500" style="width: 500px; background-color: Red;"></progress>
+    <details>
+        <summary>More Information</summary>
+        <p>This is additional information that can be toggled.</p>
+    </details>
+
+    <!-- create a table with name , roll no, and phn number-->
+     <table border="3">
+        <tr>
+            <th>name</th>
+            <th> marks</th>
+            <th>Address</th>
+            </tr>
+            <tr>
+                <td>a</td>
+                <td colspan="2">90</td>
+            </tr>
+             <tr>
+                <td>b</td>
+                <td colspan="2" rowspan="2">09</td>
+            </tr>
+            <tr>
+                <td>d</td>
+            </tr>
+     </table> 
+<br>
+<div></div>
+
+  <table border="3">
+  <tr>
+    <th>Header 1</th>
+    <th>Header 2</th>
+    <th>Header 3</th>
+  </tr>
+  <tr>
+    <td colspan="2" rowspan="2"> (2x2)</td>
+    <td>Row 2, Col 3</td>
+  </tr>
+  <tr>
+    <td>Row 3, Col 3</td>
+  </tr>
+  <tr>
+    <td>Row 4, Col 1</td>
+    <td>Row 4, Col 2</td>
+    <td>Row 4, Col 3</td>
+  </tr>
+</table>
+
+</body>
+</html>
+
+<!-- what are semantic tags -->
+<!-- Semantic tags are HTML tags that convey meaning about the content contained within them.
+  They help to describe the role of the content on the page, making it easier for browsers and developers to understand the structure and purpose of the content.
+  Examples of semantic tags include <header>, <footer>, <article>, <section>, <nav>, and <aside>. 
+  Using semantic tags can improve accessibility, SEO, and maintainability of web pages. -->
+<!--what is priority order-->
+<!-- Priority order refers to the sequence in which CSS rules are applied to HTML elements.
+  It determines which styles take precedence when multiple rules could apply to the same element. 
+  The order of priority is generally as follows: inline styles (highest priority), internal styles (defined within a <style> tag in the <head>), and external styles (linked stylesheets). 
+  Specificity also plays a role, where more specific selectors (e.g., IDs vs. classes) take precedence over more general ones. 
+  Understanding priority order is essential for effective CSS styling. -->
+<!-- what is the units of css -->
+<!-- CSS units are used to specify the size, length, and other dimensions of elements in a web page.
+  There are two main types of units in CSS: absolute units and relative units.
+  Absolute units include pixels (px), points (pt), and inches (in), which are fixed and do not change based on other factors.
+  Relative units include em, rem, percentages (%), and viewport units (vw, vh), which are flexible and can adapt to different screen sizes and contexts.
+  Using the appropriate units is important for creating responsive and accessible web designs. -->
+  
+
+  
